@@ -18,7 +18,6 @@ sudo chcon -Rt svirt_sandbox_file_t /tmp/wp-db-data && \
 mkdir wp-www-data && \
 sudo chown -R 33:33 wp-www-data && \
 sudo chcon -Rt svirt_sandbox_file_t /tmp/wp-www-data
-
 ```
 - uncomment the lines where the custom volumes are set in *docker-comoose.yaml*
 - comment out the lines where the volumes are set with the named volumes 
