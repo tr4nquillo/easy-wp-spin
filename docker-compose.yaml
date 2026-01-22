@@ -1,0 +1,36 @@
+name: wordpress-spin
+
+services:
+  db:
+    container_name: db
+    image: mysql:latest
+    networks: 
+      - wordpress
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROOT_PWD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${WP_DB_USER}
+      - MYSQL_PASSWORD=${WP_DB_USER_PWD}
+    volumes:
+      # - /tmp/wp-db-data:/var/lib/mysql
+      - wp-db-data:/var/lib/mysql 
+  wordpress:
+    container_name: wordpress
+    image: wordpress:latest
+    ports:
+      - '80:80'
+    networks: 
+      - wordpress
+    depends_on: 
+      - db
+    volumes:
+      #- /tmp/wp-www-data:/var/www/html
+      - wp-www-data:/var/www/html
+networks:
+    wordpress:
+
+volumes:
+  wp-db-data:
+  wp-www-data:
