@@ -38,7 +38,7 @@ The advantage of using docker-compose over single containers:
 - supports environment variables with .env
 - containers communicate with container names
 
-## Best practice 
+## Best practices
 
 - use .env files to better configure environments
 
