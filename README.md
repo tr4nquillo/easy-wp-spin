@@ -31,7 +31,7 @@ If you decide to switch from named volumes to bind volumes or vice versa, make s
 ## Advantages of using docker compose for local environments
 
 The advantage of using docker-compose over single containers:
-- easier container management - up, down, run, stop, state persistence etc.
+- easier container management - up, down, run, stop, state persistence with volumes etc.
 - guarantee order with depends_on
 - network is automatically managed
 - scaling of services 
