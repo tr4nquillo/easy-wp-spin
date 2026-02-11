@@ -2,7 +2,7 @@
 
 ## Purpose 
 
-The purpose of this setup is to enable an easy spin-up of a wordpress instance with the latest version of Wodpress and Mysql images.
+The purpose of this setup is to enable an easy spin-up of a wordpress instance with the latest version of Wodpress and Mysql images. This is perfect for prototyping a wordpress site on your local machine, without the need to install anything. From here the transition to an active development and maintenance of a prod site is very smooth. 
 
 ## Prerequisities 
 
@@ -14,10 +14,10 @@ The purpose of this setup is to enable an easy spin-up of a wordpress instance w
 ```
 mkdir wp-db-data && \
 sudo chown -R 999:999 wp-db-data && \
-sudo chcon -Rt svirt_sandbox_file_t /tmp/wp-db-data && \
+sudo chcon -Rt svirt_sandbox_file_t ./wp-db-data && \
 mkdir wp-www-data && \
 sudo chown -R 33:33 wp-www-data && \
-sudo chcon -Rt svirt_sandbox_file_t /tmp/wp-www-data
+sudo chcon -Rt svirt_sandbox_file_t ./wp-www-data
 
 ```
 - uncomment the lines where the custom volumes are set in *docker-comoose.yaml*
@@ -37,6 +37,10 @@ The advantage of using docker-compose over single containers:
 - scaling of services 
 - supports environment variables with .env
 - containers communicate with container names
+
+## Advantahes of using bind volumes over named volumes
+
+One of the main advantages of using bind volumes, when prototyping on your local machine, is that you can modify group permission and allow your user to more easily install additional stuff like tailwindcss for instance to your theme. 
 
 ## Best practice 
 

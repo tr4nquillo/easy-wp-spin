@@ -14,8 +14,8 @@ services:
       - MYSQL_USER=${WP_DB_USER}
       - MYSQL_PASSWORD=${WP_DB_USER_PWD}
     volumes:
-      # - /tmp/wp-db-data:/var/lib/mysql
-      - wp-db-data:/var/lib/mysql 
+      - ./wp-db-data:/var/lib/mysql
+      # - wp-db-data:/var/lib/mysql 
   wordpress:
     container_name: wordpress
     image: wordpress:latest
@@ -26,11 +26,11 @@ services:
     depends_on: 
       - db
     volumes:
-      #- /tmp/wp-www-data:/var/www/html
-      - wp-www-data:/var/www/html
+      - ./wp-www-data:/var/www/html
+      # - wp-www-data:/var/www/html
 networks:
     wordpress:
 
-volumes:
-  wp-db-data:
-  wp-www-data:
+# volumes:
+  # wp-db-data:
+  # wp-www-data:
