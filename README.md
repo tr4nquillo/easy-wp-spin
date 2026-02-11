@@ -31,7 +31,7 @@ If you decide to switch from named volumes to bind volumes or vice versa, make s
 ## Advantages of using docker compose for local environments
 
 The advantage of using docker-compose over single containers:
-- easier container management - up, down, run, stop, state persistence etc.
+- easier container management - up, down, run, stop, state persistence with volumes etc.
 - guarantee order with depends_on
 - network is automatically managed
 - scaling of services 
@@ -42,7 +42,7 @@ The advantage of using docker-compose over single containers:
 
 One of the main advantages of using bind volumes, when prototyping on your local machine, is that you can modify group permission and allow your user to more easily install additional stuff like tailwindcss for instance to your theme. 
 
-## Best practice 
+## Best practices
 
 - use .env files to better configure environments
 
