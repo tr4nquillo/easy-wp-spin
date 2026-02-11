@@ -54,7 +54,5 @@ MYSQL_USER=art
 MYSQL_PASSWORD=ArtOwner
 ```
 
-
-
 - never commit .env files to your repository
 
